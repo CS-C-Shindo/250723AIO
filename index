@@ -6,19 +6,10 @@
     <title>飲食店オーナーのためのAI検索対策（AIO）入門</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
-            line-height: 1.8;
-        }
-        .section-card {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
     <div class="max-w-4xl mx-auto p-6">
-        <!-- ヘッダー -->
         <header class="text-center mb-8">
             <h1 class="text-3xl font-bold text-blue-800 mb-2">
                 <i class="fas fa-utensils mr-2"></i>
@@ -27,7 +18,6 @@
             <p class="text-gray-600">お客様にもっと見つけてもらうための新しい取り組み</p>
         </header>
 
-        <!-- 見出し① AIO（AEO）とは？ -->
         <section class="section-card bg-white rounded-lg p-6 mb-6">
             <h2 class="text-2xl font-bold text-blue-700 mb-4">
                 <i class="fas fa-search mr-2"></i>
@@ -38,11 +28,10 @@
                 <p class="mb-3">従来のSEOは検索結果の一覧から選んでもらうものでしたが、AIOではAIが「営業時間は？」などの質問に直接「午前11時〜午後9時」と答えてくれます。</p>
             </div>
             <div class="text-center">
-                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/06b42c4d-4ad1-4cff-8d46-fae85ba554f1" alt="AIOとSEOの違い" class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
+                <img src="images/aio_vs_seo.jpg" alt="AIOとSEOの違い" class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
             </div>
         </section>
 
-        <!-- 見出し② 飲食店検索でAIが使われている実例 -->
         <section class="section-card bg-white rounded-lg p-6 mb-6">
             <h2 class="text-2xl font-bold text-green-700 mb-4">
                 <i class="fas fa-mobile-alt mr-2"></i>
@@ -56,65 +45,40 @@
                 </ul>
             </div>
             <div class="text-center">
-                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/f88752d7-9b57-4b2b-a236-cd16e51aff5f" alt="AI検索の実例" class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
+                <img src="images/ai_search_examples.jpg" alt="AI検索の実例" class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
             </div>
         </section>
 
-        <!-- 見出し③ 3つのポイント -->
         <section class="section-card bg-white rounded-lg p-6 mb-6">
             <h2 class="text-2xl font-bold text-purple-700 mb-4">
                 <i class="fas fa-lightbulb mr-2"></i>
                 自分のお店をAI検索結果に表示させるための3つのポイント
             </h2>
-            
             <div class="grid md:grid-cols-3 gap-4 mb-6">
                 <div class="bg-blue-50 p-4 rounded-lg text-center">
                     <i class="fas fa-star text-2xl text-yellow-500 mb-2"></i>
                     <h3 class="font-bold text-blue-800 mb-2">1. 口コミを増やす</h3>
-                    <p class="text-sm">お客様の生の声がAIの判断材料になります。良い口コミが多いほど、AIがおすすめしやすくなります。</p>
+                    <p class="text-sm">お客様の生の声がAIの判断材料になります。</p>
                 </div>
                 <div class="bg-green-50 p-4 rounded-lg text-center">
                     <i class="fas fa-sync-alt text-2xl text-green-500 mb-2"></i>
                     <h3 class="font-bold text-green-800 mb-2">2. 最新情報を発信</h3>
-                    <p class="text-sm">ホームページやSNSで営業時間、メニュー、イベント情報を定期的に更新することが大切です。</p>
+                    <p class="text-sm">営業時間、メニューなどを定期的に更新しましょう。</p>
                 </div>
                 <div class="bg-purple-50 p-4 rounded-lg text-center">
                     <i class="fas fa-code text-2xl text-purple-500 mb-2"></i>
                     <h3 class="font-bold text-purple-800 mb-2">3. 構造化データ導入</h3>
-                    <p class="text-sm">AIがメニューや営業時間を正しく読み取れるよう、サイトの情報を整理して記載します。</p>
+                    <p class="text-sm">サイトの情報を整理して記載します。</p>
                 </div>
             </div>
-            
             <div class="text-center">
-                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/5eb94131-3f01-4ce8-8138-12946e26f7ad" alt="AIO対策の3つのポイント" class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
+                <img src="images/aio_points.jpg" alt="AIO対策の3つのポイント" class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
             </div>
         </section>
 
-        <!-- まとめ -->
-        <section class="section-card bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6">
-            <h2 class="text-2xl font-bold mb-4">
-                <i class="fas fa-check-circle mr-2"></i>
-                まとめ：今すぐできるアクション
-            </h2>
-            <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                <p class="mb-3 font-semibold">AI検索で見つけてもらうために、まずは以下から始めましょう：</p>
-                <ol class="list-decimal list-inside space-y-2">
-                    <li>お客様に口コミをお願いしてみる</li>
-                    <li>ホームページの営業時間とメニューを最新にする</li>
-                    <li>Googleマイビジネスの情報を充実させる</li>
-                </ol>
-                <p class="mt-4 text-center font-bold text-yellow-300">
-                    <i class="fas fa-rocket mr-2"></i>
-                    小さな一歩が、大きな集客につながります！
-                </p>
-            </div>
-        </section>
-
-        <!-- フッター -->
         <footer class="text-center mt-8 text-gray-500">
             <p>&copy; 2024 飲食店オーナーのためのAI検索対策ガイド</p>
         </footer>
     </div>
 </body>
 </html>
-
