@@ -1,143 +1,809 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社CS-C様 資料</title>
-    <link rel="stylesheet" href="style.css">
+    <title>飲食業界のAIO対策 - 画像で分かる検索の変化</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .search-box {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .ai-response {
+            background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .timeline {
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #667eea;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            margin-bottom: 40px;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+        .timeline-dot {
+            position: absolute;
+            right: -25px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #667eea;
+        }
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -25px;
+        }
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .platform-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .platform-item:hover {
+            transform: translateY(-5px);
+        }
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: #000;
+            border-radius: 30px;
+            padding: 20px;
+            margin: 20px auto;
+            position: relative;
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .ai-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .ai-logo {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="gradient-bg text-white py-16 text-center">
+        <h1 class="text-5xl font-bold mb-4">🍽️ 飲食業界のAIO対策</h1>
+        <p class="text-xl opacity-90">AI検索時代の新しい集客戦略</p>
+        <div class="mt-8 text-lg">
+            <i class="fas fa-robot mr-2"></i>
+            検索が変わる。飲食店の集客も変わる。
+        </div>
+    </div>
 
-    <header>
-        <h1>時代ごとの「飲食店」のWEBでの探し方の変化</h1>
-    </header>
-
-    <main>
-        <section id="search-evolution">
-            <div class="era-grid">
-                <div class="era">
-                    <h2>グルメサイト中心</h2>
-                    <p>(~2010年頃)</p>
-                    <div class="logos">
-                        <img src="https://i.imgur.com/rS2jSPU.png" alt="グルメサイトのロゴ">
-                    </div>
+    <!-- 検索の変化 -->
+    <section class="py-16 px-8 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12">
+            <i class="fas fa-search mr-3 text-blue-500"></i>
+            いま、検索の仕方にどんな変化が起きているのか？
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-6 text-gray-700">従来のキーワード検索</h3>
+                <div class="search-box text-lg">
+                    <i class="fas fa-search mr-3 text-gray-500"></i>
+                    「大手町 焼き鳥」
                 </div>
-                <div class="era">
-                    <h2>検索サイト併用期</h2>
-                    <p>(2010年~2016年頃)</p>
-                    <div class="logos">
-                         <img src="https://i.imgur.com/39F3w62.png" alt="検索サイトのロゴ">
-                    </div>
-                </div>
-                <div class="era">
-                    <h2>SNS発見期</h2>
-                    <p>(2016~現在)</p>
-                     <div class="logos">
-                        <img src="https://i.imgur.com/gAIVfW4.png" alt="SNSのロゴ">
-                    </div>
-                </div>
-                 <div class="era">
-                    <h2>インバウンド拡大期</h2>
-                    <p>(2018~現在)</p>
-                     <div class="logos">
-                        <img src="https.i.imgur.com/D4r3v2O.png" alt="インバウンド向けサービスのロゴ">
+                <i class="fas fa-arrow-down text-3xl text-gray-400 my-4"></i>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-sm text-gray-600 mb-2">検索結果</div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <div class="font-semibold">焼き鳥店リスト</div>
+                        <div class="text-gray-600">◯◯店、△△店、××店...</div>
                     </div>
                 </div>
             </div>
-            <p class="conclusion">時代と共に飲食店の探し方は多様化しており、どこで探してもお店が見つかる状態を作ることが非常に重要!</p>
-        </section>
-
-        <hr>
-
-        <section id="ai-search-era">
-            <h2>時代は「AIO」へ</h2>
-            <div class="ai-intro">
-                <img src="https://i.imgur.com/9a37sNA.png" alt="AI Brain" class="ai-brain">
-                <div class="ai-logos">
-                    <img src="https://i.imgur.com/e4pY49a.png" alt="AI Search Logos">
+            
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-6 text-purple-700">AI相談型検索</h3>
+                <div class="search-box text-lg bg-purple-50 border-purple-200">
+                    <i class="fas fa-comments mr-3 text-purple-500"></i>
+                    「大手町で焼き鳥を食べるならどこ？」
                 </div>
-            </div>
-            <p class="future-prospect">近い将来「AI検索」を用いた飲食店探しが増えてくる</p>
-        </section>
-
-        <hr>
-
-        <section id="ai-mode">
-            <h2>2025年5月 Googleが「AIモード」を発表</h2>
-            <div class="ai-mode-gallery">
-                <img src="https://i.imgur.com/B9x95Rk.png" alt="Google AI Mode UI" class="ai-mode-img">
-                <img src="https://i.imgur.com/yO84xY5.png" alt="Google AI Mode Presentation" class="ai-mode-img">
-            </div>
-             <p class="conclusion">「検索する」時代は終わりつつある</p>
-        </section>
-
-        <hr>
-
-        <section id="search-paradigm-shift">
-             <h2>いま、検索の仕方にどんな変化が起きているのか？</h2>
-            <div class="search-comparison">
-                <div class="search-type">
-                    <h3>キーワード検索</h3>
-                    <p>「大手町 焼き鳥」</p>
-                </div>
-                <div class="arrow">→</div>
-                <div class="search-type">
-                    <h3>相談型検索</h3>
-                    <p>「大手町で焼き鳥会食するならどこ？」</p>
-                </div>
-            </div>
-            <p class="gartner-report">2026年までにGoogle検索は「25%」AI検索に置き換わる <span class="source">(参照元: Gartner社のレポート)</span></p>
-        </section>
-
-        <hr>
-
-        <section id="ai-impact">
-            <h2>実際に飲食店探しの検索にも影響が出ている</h2>
-            <div class="impact-visual">
-                 <img src="https://i.imgur.com/Yw1qj3k.png" alt="AI Overview in Google Search">
-            </div>
-            <p>Google検索時にAI回答が目立つ位置に表示されている</p>
-        </section>
-
-        <hr>
-
-        <section id="ai-chatbots">
-            <h2>チャット系のAIでも表示されるようになっている</h2>
-            <div class="chatbot-gallery">
-                <figure>
-                    <img src="https://i.imgur.com/AFrCgA5.png" alt="ChatGPT Search Result">
-                    <figcaption>Apple (ChatGPT)</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://i.imgur.com/D4sYJZN.png" alt="Gemini Search Result">
-                    <figcaption>Google (Gemini)</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://i.imgur.com/n6bYdZf.png" alt="Copilot Search Result">
-                    <figcaption>Microsoft (Copilot)</figcaption>
-                </figure>
-            </div>
-            <p class="conclusion">Apple、Google、Microsoftのすべてで「大手町のおすすめ焼き鳥屋は？」と検索すると「やきとり宮川」が表示</p>
-        </section>
-
-        <hr>
-
-        <section id="ai-information-source">
-            <h2>Q: AIは「何を見て」答えているのか？</h2>
-             <div class="ai-answer-container">
-                <img src="https://i.imgur.com/wP0lC74.png" alt="AI Answer Sources" class="answer-sources-img">
-                 <div class="answer-box">
-                    <h3>A: WEB上のあらゆる情報を総合的に見ている</h3>
-                    <div class="source-types">
-                        <div class="source-type-item">公式ホームページ</div>
-                        <div class="source-type-item">グルメサイト</div>
-                        <div class="source-type-item">その他サイト</div>
+                <i class="fas fa-arrow-down text-3xl text-purple-400 my-4"></i>
+                <div class="ai-response">
+                    <div class="font-semibold mb-2">
+                        <i class="fas fa-robot mr-2"></i>
+                        AI回答
+                    </div>
+                    <div class="text-sm">
+                        大手町での焼き鳥でおすすめは◯◯店です。創業1949年の老舗で「やきとり宮川 大手町店」では、厳選された備長炭で焼き上げた本格的な焼き鳥が楽しめます...
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <div class="text-center mt-12 p-8 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-chart-line mr-2 text-yellow-500"></i>
+                2026年までにGoogle検索は「25%」AI検索に置き換わる
+            </h3>
+            <p class="text-gray-600">参考：Gartnerのレポート</p>
+        </div>
+    </section>
 
-    </main>
+    <!-- AIは何を見ているか -->
+    <section class="py-16 px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <i class="fas fa-eye mr-3 text-green-500"></i>
+                Q：AIは「何を見て」答えているのか？
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="platform-item">
+                    <i class="fas fa-globe text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">公式ホームページ</h3>
+                    <p class="text-gray-600 text-sm">店舗の基本情報・メニュー</p>
+                </div>
+                <div class="platform-item">
+                    <i class="fas fa-utensils text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">グルメサイト</h3>
+                    <p class="text-gray-600 text-sm">食べログ・ぐるなび等</p>
+                </div>
+                <div class="platform-item">
+                    <i class="fas fa-star text-4xl text-yellow-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">その他サイト</h3>
+                    <p class="text-gray-600 text-sm">口コミ・レビューサイト</p>
+                </div>
+            </div>
+            
+            <div class="ai-response text-center text-xl">
+                <i class="fas fa-brain mr-3"></i>
+                A：WEB上のあらゆる情報を総合的に見ている
+            </div>
+        </div>
+    </section>
 
+    <!-- 時代の変化 -->
+    <section class="py-16 px-8 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <i class="fas fa-history mr-3 text-purple-500"></i>
+                時代ごとの「飲食店」のWEBでの探し方の変化
+            </h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-lg card-shadow">
+                        <h3 class="text-xl font-bold mb-3 text-red-600">グルメサイト中心</h3>
+                        <p class="text-gray-600 mb-3">〜2010年頃</p>
+                        <div class="platform-grid">
+                            <div class="text-center">
+                                <i class="fas fa-utensils text-2xl text-red-500 mb-2"></i>
+                                <div class="text-sm">ぐるなび</div>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-star text-2xl text-orange-500 mb-2"></i>
+                                <div class="text-sm">食べログ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-lg card-shadow">
+                        <h3 class="text-xl font-bold mb-3 text-blue-600">検索サイト併用期</h3>
+                        <p class="text-gray-600 mb-3">2010年〜2016年頃</p>
+                        <div class="platform-grid">
+                            <div class="text-center">
+                                <i class="fab fa-google text-2xl text-blue-500 mb-2"></i>
+                                <div class="text-sm">Google</div>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-map-marker-alt text-2xl text-green-500 mb-2"></i>
+                                <div class="text-sm">Maps</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-lg card-shadow">
+                        <h3 class="text-xl font-bold mb-3 text-pink-600">SNS発見期</h3>
+                        <p class="text-gray-600 mb-3">2016年〜現在</p>
+                        <div class="platform-grid">
+                            <div class="text-center">
+                                <i class="fab fa-instagram text-2xl text-pink-500 mb-2"></i>
+                                <div class="text-sm">Instagram</div>
+                            </div>
+                            <div class="text-center">
+                                <i class="fab fa-tiktok text-2xl text-gray-800 mb-2"></i>
+                                <div class="text-sm">TikTok</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-lg card-shadow">
+                        <h3 class="text-xl font-bold mb-3 text-purple-600">インバウンド拡大期</h3>
+                        <p class="text-gray-600 mb-3">2018年〜現在</p>
+                        <div class="platform-grid">
+                            <div class="text-center">
+                                <i class="fas fa-plane text-2xl text-blue-500 mb-2"></i>
+                                <div class="text-sm">TripAdvisor</div>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-map text-2xl text-green-500 mb-2"></i>
+                                <div class="text-sm">NAVER Map</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 p-8 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    時代と共に飲食店の探し方は多様化しており、<br>
+                    どこで探してもお店が見つかる状態を作ることが非常に重要！
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- AIO時代へ -->
+    <section class="py-16 px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <i class="fas fa-robot mr-3 text-blue-500"></i>
+                時代は「AIO」へ
+            </h2>
+            
+            <div class="ai-logo-grid mb-12">
+                <div class="ai-logo">
+                    <i class="fas fa-gem text-3xl text-purple-500 mb-3"></i>
+                    <div class="font-bold">Gemini</div>
+                </div>
+                <div class="ai-logo">
+                    <i class="fas fa-comments text-3xl text-green-500 mb-3"></i>
+                    <div class="font-bold">ChatGPT</div>
+                </div>
+                <div class="ai-logo">
+                    <i class="fas fa-search text-3xl text-blue-500 mb-3"></i>
+                    <div class="font-bold">Felo</div>
+                </div>
+                <div class="ai-logo">
+                    <i class="fas fa-brain text-3xl text-red-500 mb-3"></i>
+                    <div class="font-bold">deepseek</div>
+                </div>
+                <div class="ai-logo">
+                    <i class="fas fa-star text-3xl text-yellow-500 mb-3"></i>
+                    <div class="font-bold">perplexity</div>
+                </div>
+                <div class="ai-logo">
+                    <i class="fas fa-fire text-3xl text-orange-500 mb-3"></i>
+                    <div class="font-bold">Genspark</div>
+                </div>
+                <div class="ai-logo">
+                    <i class="fas fa-cloud text-3xl text-gray-500 mb-3"></i>
+                    <div class="font-bold">Claude</div>
+                </div>
+                <div class="ai-logo">
+                    <i class="fas fa-code text-3xl text-blue-600 mb-3"></i>
+                    <div class="font-bold">Copilot</div>
+                </div>
+            </div>
+            
+            <div class="text-center p-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg">
+                <h3 class="text-3xl font-bold mb-4">
+                    <i class="fas fa-utensils mr-3"></i>
+                    近い将来「AI検索」を用いた飲食店探しが増えてくる
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google AI Mode -->
+    <section class="py-16 px-8 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <i class="fab fa-google mr-3 text-blue-500"></i>
+                2025年5月 Googleが「AIモード」を発表
+            </h2>
+            
+            <div class="flex justify-center items-center mb-12">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="text-center p-4">
+                            <div class="text-xl font-bold mb-4">Meet AI Mode</div>
+                            <div class="search-box">
+                                <i class="fas fa-search mr-2"></i>
+                                Restaurants good for foodies
+                            </div>
+                            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                                <div class="text-sm font-semibold mb-2">AI による提案</div>
+                                <div class="text-xs text-gray-600">
+                                    Best Italian restaurants<br>
+                                    Fresh & tasty locations recommended<br>
+                                    Near this restaurant is a collaboration with renowned chef Jean-Georges...
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 mt-4">
+                                <div class="bg-gray-200 h-16 rounded"></div>
+                                <div class="bg-gray-200 h-16 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center p-8 bg-red-50 rounded-lg border-l-4 border-red-400">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-exclamation-triangle mr-3 text-red-500"></i>
+                    検索する時代は終わりつつある
+                </h3>
+                <p class="text-gray-600">参考：GoogleのAIモード</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実際の影響 -->
+    <section class="py-16 px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <i class="fas fa-chart-bar mr-3 text-green-500"></i>
+                実際に飲食店探しの検索にも影響が出ている
+            </h2>
+            
+            <div class="bg-gray-50 p-8 rounded-lg mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <i class="fab fa-google text-2xl mr-3"></i>
+                        <span class="text-lg">Google検索</span>
+                    </div>
+                    <div class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+                        <i class="fas fa-robot mr-2"></i>
+                        AIによる編集
+                    </div>
+                </div>
+                
+                <div class="ai-response">
+                    <h3 class="font-bold text-lg mb-3">大手町での飲み会におすすめの焼き鳥店</h3>
+                    <p class="mb-4">
+                        大手町での飲み会におすすめの焼き鳥店をご紹介します。いくつか候補を挙げてみます。まず、「やきとり宮川 大手町店」では、厳選された備長炭で焼き上げた「白い焼鳥」や絶品商品が自慢が楽しめます。次に、「とり金 大手町ファーストスクエア店」もおすすめです...
+                    </p>
+                    <div class="text-sm">
+                        <strong>おすすめの焼き鳥店:</strong><br>
+                        やきとり宮川 大手町店<br>
+                        <i class="fas fa-star text-yellow-400"></i> 創業1949年の老舗「やきとり宮川」や「絶品商品が自慢が楽しめます。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center p-6 bg-blue-50 rounded-lg">
+                <h3 class="text-2xl font-bold text-gray-800">
+                    <i class="fas fa-eye mr-2 text-blue-500"></i>
+                    Google検索時にAI回答が目立つ位置に表示されている
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- チャット系AI -->
+    <section class="py-16 px-8 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <i class="fas fa-comments mr-3 text-purple-500"></i>
+                チャット系のAIでも表示されるようになっている
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg p-6 card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-circle text-gray-800 mr-2"></i>
+                        <span class="font-bold">ChatGPT</span>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg text-sm">
+                        <div class="font-semibold mb-2">大手町で焼き鳥を食べるなら...</div>
+                        <div class="text-gray-600">やきとり宮川 大手町店がおすすめです。創業1949年の老舗で...</div>
+                        <div class="mt-2 p-2 bg-red-100 rounded">
+                            <strong>やきとり宮川 大手町店</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6 card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-gem text-purple-500 mr-2"></i>
+                        <span class="font-bold">Gemini</span>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg text-sm">
+                        <div class="font-semibold mb-2">大手町エリアの焼き鳥店を調べました</div>
+                        <div class="text-gray-600">おすすめは以下の通りです...</div>
+                        <div class="mt-2 p-2 bg-red-100 rounded">
+                            <strong>やきとり宮川 大手町</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6 card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-blue-500 mr-2"></i>
+                        <span class="font-bold">Copilot</span>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg text-sm">
+                        <div class="font-semibold mb-2">大手町での焼き鳥店をお探しですね</div>
+                        <div class="text-gray-600">地図と合わせてご紹介します...</div>
+                        <div class="mt-2 p-2 bg-red-100 rounded">
+                            <strong>やきとり宮川</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <div class="inline-block bg-white p-8 rounded-lg card-shadow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-map-marker-alt text-red-500 mr-3"></i>
+                        <span class="text-xl font-bold">やきとり宮川 大手町</span>
+                    </div>
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600">4.1 Googleのクチコミ (276)</span>
+                    </div>
+                    <div class="text-gray-600 mb-6">¥1,000~2,000 · 焼き鳥店</div>
+                    
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <i class="fab fa-apple text-2xl mb-2"></i>
+                            <div class="text-sm font-semibold">Apple (ChatGPT)</div>
+                        </div>
+                        <div>
+                            <i class="fab fa-google text-2xl mb-2"></i>
+                            <div class="text-sm font-semibold">Google (Gemini)</div>
+                        </div>
+                        <div>
+                            <i class="fab fa-microsoft text-2xl mb-2"></i>
+                            <div class="text-sm font-semibold">Microsoft (Copilot)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-yellow-50 rounded-lg">
+                        <div class="font-bold text-lg">のすべてで</div>
+                        <div class="text-xl">「大手町のおすすめ焼き鳥店は？」</div>
+                        <div class="text-xl">と検索すると「やきとり宮川」が表示</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AIOとは何か -->
+    <section class="py-16 px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <i class="fas fa-question-circle mr-3 text-blue-500"></i>
+                AIOとは？
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <div class="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-700">
+                            <i class="fas fa-robot mr-2"></i>
+                            AIO = AI Optimization
+                        </h3>
+                        <p class="text-lg text-gray-700 mb-4">
+                            AI検索エンジンやチャットボット型AIに、自社の情報を<strong>適切に認識・引用</strong>してもらうための最適化手法
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>従来のSEOを進化させた概念</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>AIが生成する回答での露出を狙う</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>複数プラットフォームでの一貫した情報提供</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-center">
+                        <i class="fas fa-brain text-8xl text-purple-500 mb-6"></i>
+                        <div class="text-2xl font-bold text-gray-800 mb-4">AI時代の新常識</div>
+                        <div class="text-lg text-gray-600">
+                            検索エンジンの順位を上げるのではなく、<br>
+                            AIの回答に<strong>引用される</strong>ことが目標
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- なぜ飲食業界で重要か -->
+    <section class="py-16 px-8 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <i class="fas fa-utensils mr-3 text-orange-500"></i>
+                なぜ飲食業界でもAIOを意識したほうがいいのか？
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-lg card-shadow text-center">
+                    <i class="fas fa-search-location text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">地域検索の変化</h3>
+                    <p class="text-gray-600">
+                        「近くの美味しいお店は？」という自然な質問が増加。AI検索での露出が集客に直結。
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg card-shadow text-center">
+                    <i class="fas fa-globe text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">情報の信頼性</h3>
+                    <p class="text-gray-600">
+                        複数サイトの情報を統合するAI。一貫した正確な情報提供が重要になる。
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg card-shadow text-center">
+                    <i class="fas fa-chart-line text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">競合優位性</h3>
+                    <p class="text-gray-600">
+                        早期にAIO対策を始めることで、AI検索時代の集客で先行できる。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white p-8 rounded-lg text-center">
+                <h3 class="text-3xl font-bold mb-4">
+                    <i class="fas fa-exclamation-circle mr-3"></i>
+                    飲食店の未来の集客は「AI検索対応」で決まる
+                </h3>
+                <p class="text-xl opacity-90">
+                    今から始めるAIO対策が、明日の売上を左右します
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 具体的な対策 -->
+    <section class="py-16 px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <i class="fas fa-clipboard-list mr-3 text-green-500"></i>
+                飲食店が今すぐできるAIO対策
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold mb-3 text-blue-700">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            1. Googleマップ・ビジネスプロフィール最適化
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                正確な店舗情報（営業時間・住所・電話番号）
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                高品質な料理・店内写真の定期更新
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                口コミへの丁寧な返信
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-bold mb-3 text-green-700">
+                            <i class="fas fa-globe mr-2"></i>
+                            2. 公式サイトの構造化データ対応
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                メニュー・価格の詳細掲載
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                営業時間・予約情報の明記
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                アクセス情報の詳細化
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                        <h3 class="text-xl font-bold mb-3 text-purple-700">
+                            <i class="fas fa-utensils mr-2"></i>
+                            3. グルメサイトでの情報統一
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                食べログ・ぐるなび等での情報更新
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                全プラットフォームでの一貫した情報
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                特徴・こだわりの明確な記載
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                        <h3 class="text-xl font-bold mb-3 text-orange-700">
+                            <i class="fas fa-star mr-2"></i>
+                            4. レビュー・口コミ管理
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                お客様からの口コミ促進
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                ネガティブレビューへの適切な対応
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                SNSでの話題作り
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <i class="fas fa-rocket mr-3"></i>
+                        AI検索時代の集客成功の鍵
+                    </h3>
+                    <p class="text-lg">
+                        「どのAIに聞かれても、正確で魅力的な情報が返ってくる状態」を作ること
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- まとめ -->
+    <section class="gradient-bg text-white py-16 px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">
+                <i class="fas fa-flag-checkered mr-3"></i>
+                まとめ
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                    <i class="fas fa-chart-line text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">検索の変化</h3>
+                    <p>キーワード検索から<br>AI相談型検索へ</p>
+                </div>
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                    <i class="fas fa-utensils text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">飲食業界への影響</h3>
+                    <p>AIが店舗情報を<br>総合的に判断</p>
+                </div>
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                    <i class="fas fa-target text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">AIO対策の重要性</h3>
+                    <p>AI時代の集客戦略<br>として必須</p>
+                </div>
+            </div>
+            
+            <div class="text-2xl font-bold mb-6">
+                🚀 今すぐAIO対策を始めて、AI検索時代の集客を制しましょう！
+            </div>
+            
+            <div class="text-lg opacity-90">
+                飲食店の未来は、AIに「選ばれる」お店になることから始まります。
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-lg mb-4">
+                <i class="fas fa-utensils mr-2"></i>
+                飲食業界のAIO対策完全ガイド
+            </p>
+            <p class="text-gray-400">
+                AI検索時代の新しい集客戦略で、お店の未来を変えよう
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDuhSBUf85uS08FtREOEyzcahnLIPB%2BivUDj1Buv513bAvX7m4usX7hmAPWkEvj39OjCdUyX9kl7U%2BNVMfwUOSQQBs66wmyOhFuN6asUeL1CF1CKpjoitoDs84Im1a7w3410oiefdgydoe6PfEgAvjSflLM97IzXJxxM64a8SsaFo3uXiq0xTL%2Buij%2FJHBiYo0W7P%2BzfiV1AdoQS3gVRy6SEjKTL%2BbpCUnHvx6SXknt6W2%2BeC%2BG%2BAXfEFu3KvcCaMxwxoCMyLYyByf8KADcOY5k%2Fei3B2OusKmi8%2Fbe4%2FF%2F%2FEj7H2ODcNrFIhm3kFZUVhOmFole5LtRB8Ryofkj8b%2Bml1%2BFDkyBvFWK%2B6DIFjn3di%2Fbm%2FydPph60D%2Bqzgh%2FLiaYkeycZyWLNU17UQMxjqq%2F%2Fk%2B4tjPfkYcyLX8%2FC1xfZFIatLOtF7aNvvaXX4a4w0nwpM79hlbyWf7q8XbHT18vAigze6luifMbCYWz5FVMdDiUSqClSxeY3p3XWCdMgB2lZe5ZESseq4kIjR7Nf83Nc%3D";
+        window.__genspark_locale = "ja-JP";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDuhSBUf85uS08FtREOEyzcahnLIPB+ivUDj1Buv513bAvX7m4usX7hmAPWkEvj39OjCdUyX9kl7U+NVMfwUOSQQBs66wmyOhFuN6asUeL1CF1CKpjoitoDs84Im1a7w3410oiefdgydoe6PfEgAvjSflLM97IzXJxxM64a8SsaFo3uXiq0xTL+uij/JHBiYo0W7P+zfiV1AdoQS3gVRy6SEjKTL+bpCUnHvx6SXknt6W2+eC+G+AXfEFu3KvcCaMxwxoCMyLYyByf8KADcOY5k/ei3B2OusKmi8/be4/F//Ej7H2ODcNrFIhm3kFZUVhOmFole5LtRB8Ryofkj8b+ml1+FDkyBvFWK+6DIFjn3di/bm/ydPph60D+qzgh/LiaYkeycZyWLNU17UQMxjqq//k+4tjPfkYcyLX8/C1xfZFIatLOtF7aNvvaXX4a4w0nwpM79hlbyWf7q8XbHT18vAigze6luifMbCYWz5FVMdDiUSqClSxeY3p3XWCdMgB2lZe5ZESseq4kIjR7Nf83Nc=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
